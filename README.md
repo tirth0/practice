@@ -6,7 +6,6 @@ Competitive coding
 2. Order Statistics(Kth smallest/Largest).  
 3. Kadane.  
 4. Pattern Searching Algorithms(KMP/RabinKarp/Z's)
-5. Manacher's Algorithm.  
 6. Sieve,Segmented Sieve.  
 7. Modulo Arithmetic.  
 8. Matrix Problems.
@@ -18,3 +17,11 @@ for order statistics,
 3. Binary Search on Segment Trees/Merge Sort Trees
 4. Min Heap Max Heap techniques 
 5. Hashing
+
+## week2 :
+1. Binary Search and Applications.
+2. Queues & stacks Algorithms and application problems.
+3. Linked Lists algorithms and applications(Searching and Sorting incl merge sort,quick sort etc.)
+4. Binary Trees and related problems.
+5. Hashing.
+6. Bit Manipulation.

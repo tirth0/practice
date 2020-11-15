@@ -9,7 +9,7 @@ using namespace std;
 #define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 typedef long long int ll;
 
-//Lilly's Problem Hackerrank
+//Lilly's Homework Hackerrank
 
 void swap(int * a,int * b){
     int temp = *a;
