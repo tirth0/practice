@@ -23,5 +23,4 @@ for order statistics,
 2. Queues & stacks Algorithms and application problems.
 3. Linked Lists algorithms and applications(Searching and Sorting incl merge sort,quick sort etc.)
 4. Binary Trees and related problems.
-5. Hashing.
 6. Bit Manipulation.
