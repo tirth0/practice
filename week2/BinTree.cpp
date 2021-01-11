@@ -69,7 +69,6 @@ myBinTree * preSearch(myBinTree * current,int search){
     if (current->marks == search){
         return current;
     }
-    cout << current->marks<<" ";
     myBinTree * ptr = preSearch(current->left,search);
     if (ptr!=NULL && ptr->marks == search){
         return ptr;
@@ -80,11 +79,11 @@ myBinTree * preSearch(myBinTree * current,int search){
 
 myBinTree * inSearch(myBinTree * current,int search){
     if (current == NULL) return NULL;
-    myBinTree * ptr = preSearch(current->left,search);
+    myBinTree * ptr = inSearch(current->left,search);
     if (ptr!=NULL && ptr->marks == search){
         return ptr;
     }
-    ptr = preSearch(current->right,search);
+    ptr = inSearch(current->right,search);
     return ptr;
 }
 

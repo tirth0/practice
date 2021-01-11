@@ -5,7 +5,7 @@ using namespace std;
 void merge(int arr[],int l,int m,int r){
     int n1 = m-l+1;
     int n2 = r-m;
-    int t1[n1],t2[n2];
+    int * t1 = new int[n1],*t2 = new int[n2];
     
     int i=0,j=0;
     for (i=0;i<n1;i++){
@@ -68,7 +68,7 @@ void show(int arr[],int n){
 int main(){
     cout << "enter size\n";
     int n; cin >> n;
-    int arr[n];
+    int *arr = new int[n];
     cout << "enter elements";
     for (int i=0;i<n;i++) cin >> arr[i];
     //method call
