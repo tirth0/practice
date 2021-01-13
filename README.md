@@ -22,5 +22,10 @@ for order statistics,
 1. Binary Search and Applications.
 2. Queues & stacks Algorithms and application problems.
 3. Linked Lists algorithms and applications(Searching and Sorting incl merge sort,quick sort etc.)
-4. Binary Trees and related problems.
-6. Bit Manipulation.
+4. Binary Trees and related problems. !!
+6. Bit Manipulation. !!
+
+## week3 : 
+1. BackTracking - N Queen's Problem.
+2. BackTracking - Knight's Tour
+3. BackTracking - Rat in a Maze
