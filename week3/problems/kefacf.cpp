@@ -2,6 +2,7 @@
 #include<iostream>
 #include<vector>
 #include<stack>
+#include<queue>
 #include<algorithm>
 using namespace std; 
 
@@ -41,7 +42,25 @@ class Graph{
         res = 0;count =0;
     }
     void initNodes(vector<int> cats,int n){
-        
+        queue<Node *> q;
+        Node * root = new Node(0,cats[0]);
+        tree[0] = root;
+        int k = 0;
+        q.push(root);
+        visited[root->label] = true;
+        while (!q.empty()){
+            Node * node = q.front();q.pop();
+            node->isCat = cats[k++];
+            cout << node->label << " has " << node->isCat<< endl;;
+            vector<int> neighbourList = graph[node->label];
+            for (auto neighbour : neighbourList){
+                if (!visited[neighbour]){
+                    Node * n = new Node(neighbour,0);
+                    q.push(n);
+                    visited[neighbour] = true;
+                }
+            }
+        }
     }
     void addEdge(int a, int b){
         // cout << a-1 << " " << b -1 << endl;
@@ -111,13 +130,13 @@ int main(){
     for (int i=0;i<n;i++)
         cin >> cats[i];
     Graph g(n);
-    g.initNodes(cats,n);
+    
     for (int i=0;i<n-1;i++){
         int a,b;
         cin >> a >> b;
         g.addEdge(a,b);
     }
+    g.initNodes(cats,n);
     
-    g.dfs(m);
     return 0;
 }

@@ -29,3 +29,6 @@ for order statistics,
 1. BackTracking - N Queen's Problem.
 2. BackTracking - Knight's Tour
 3. BackTracking - Rat in a Maze
+4. Graph - DFS using adjacency matrix
+5. Graph - DFS using adjacency List
+6. Graph - BFS using adjacency List
