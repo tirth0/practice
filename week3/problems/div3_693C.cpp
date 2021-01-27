@@ -33,30 +33,3 @@ int main() {
 }
 
 
-// void solve(vector<int>& a,int n){
-    
-//     vector<int>sum(n);
-//     for (int i=n-1;i>=0;i--){
-//         sum[i] = a[i];
-//         int j = i + a[i];
-//         if (j<n)
-//             sum[i]+=a[j];
-//     }
-//     cout << *max_element(sum.begin(),sum.end()) << endl;
-// }
-
-// int main(){
-//     int t;
-//     cin >> t;
-//     while(t>0){
-//         int n;
-//         cin >> n;
-//         vector<int> a(n);
-//         for (int i=0;i<n;i++){
-//             cin >> a[i];
-//         }
-//         solve(a,n);
-//         t--;
-//     }
-//     return 0;
-// }
