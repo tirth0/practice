@@ -32,3 +32,6 @@ for order statistics,
 4. Graph - DFS using adjacency matrix
 5. Graph - DFS using adjacency List
 6. Graph - BFS using adjacency List
+
+## week4 :
+1. Greedy Algorithm - Fractional Knapsack
