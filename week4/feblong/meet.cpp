@@ -28,47 +28,23 @@ tim construct(string P1,string P2){
     // cout << "tim being constructed is " << (int)h1 << (int)h0 << ":" << (int)m1 << (int)m0 << P2 << endl;
     int hour = ((int)h1-48)*10 + ((int)h0-48);
     int min = ((int)m1-48)*10 + ((int)m0-48);
-    if (P2 == "AM" && hour == 12) hour+=12;
+    if (P2 == "AM" && hour == 12) hour-=12;
     if (P2 == "PM" && hour!=12) hour+=12;
+    cout << hour << ":" <<  min << endl;
     tim t = {hour,min};
     return t;
 }
 
-
-tim find_max(tim A,tim B){
-    if (A.hours > B.hours){
-        return A;
-    }
-    else if (A.hours < B.hours){
-        return B;
-    }
-    else{
-        if (A.min>B.min)
-            return A;
-        else if (A.min < B.min)
-            return B;
-        else return A;
-    }
-}
-
-tim find_min(tim A,tim B){
-    if (A.hours < B.hours){
-        return A;
-    }
-    else if (A.hours > B.hours){
-        return B;
-    }
-    else{
-        if (A.min<B.min)
-            return A;
-        else if (A.min > B.min)
-            return B;
-        else return A;
-    }
-}
-
 bool cmp_tim(tim A,tim B){
     if (A.hours == B.hours && A.min == B.min) return true;
+    return false;
+}
+
+bool timeCmp(tim A,tim B){
+    int a = A.hours*100 + A.min;
+    int b = B.hours*100 + B.min;
+    if (a>b)
+        return true;
     return false;
 }
 
@@ -77,25 +53,7 @@ bool cmp(tim P,tim A,tim B){
     int i = A.hours, j = A.min;
     tim iter = {i,j};
     if (cmp_tim(P,A) || cmp_tim(P,B)) return true;
-    while (!cmp_tim(iter,B)){
-        if (cmp_tim(iter,P)) return true;
-        if (iter.hours == P.hours){
-            iter.min++;
-            if (iter.min == 60){
-                iter.min = 0;
-                iter.hours++;
-            }
-        }
-        else if (iter.hours == B.hours){
-            iter.min++;
-            if (iter.min == 60){
-                iter.min = 0;
-                iter.hours++;
-            }
-        }
-        else iter.hours++;
-        if (iter.hours == 25) iter.hours = 1;
-    }
+    if (timeCmp(P,A) && timeCmp(B,P)) return true;
     return false;
 }
 
@@ -106,15 +64,17 @@ void solve(){
     tim P = construct(P1,P2);
     int x;
     cin >> x;
+    string res="";
     while (x>0){
         string A1,B1,C1,D1;
         cin >> A1 >> B1 >> C1 >> D1;
         tim A = construct(A1,B1);
         tim B = construct(C1,D1);
-        if (cmp(P,A,B)) cout << 1 << endl;
-        else cout << 0 << endl;
+        if (cmp(P,A,B)) res+="1";
+        else res+="0";
         x--;
     }
+    cout << res << endl;
 }
 
 int main(){
