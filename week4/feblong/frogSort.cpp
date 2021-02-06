@@ -3,7 +3,9 @@
 #include<stack>
 #include<queue>
 #include<algorithm>
-#include <string> 
+#include<string> 
+#include<map>
+#include<utility> 
 using namespace std; 
 
 #define mod 1000000007
@@ -23,6 +25,13 @@ void solve(){
         cin >> f[i];
     for (int i=0;i<n;i++)
         cin >> l[i];
+    // map<int,pair<int,int>> mp;
+    // for (int i=0;i<n;i++){
+    //     mp.insert(make_pair(f[i],make_pair(i,l[i])));
+    // }
+    // for (auto pair : mp){
+    //     cout << pair.first << " : <" << pair.second.first <<","<<pair.second.second << ">" << endl;
+    // }
     
 }
 
