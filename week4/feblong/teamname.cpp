@@ -27,7 +27,6 @@ void solve(){
     int count=0;
     for (int i=0;i<n-1;i++){
         for (int j=i+1;j<n;j++){
-            
             if (names[i][0] != names[j][0]){
                 string s1 = names[j][0] + names[i].substr(1);
                 string s2 = names[i][0] + names[j].substr(1);
@@ -35,6 +34,7 @@ void solve(){
                 for (int k=0;k<n;k++){
                     if (s1 == names[k] || s2 == names[k]){
                         flag = false;
+                        break;
                     }
                 }
                 if (flag) count += 2;

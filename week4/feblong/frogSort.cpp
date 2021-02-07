@@ -15,6 +15,9 @@ using namespace std;
 #define endl "\n"
 #define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 typedef long long int ll;
+int dp[1000000];
+
+
 
 void solve(){
     int n;
@@ -25,14 +28,35 @@ void solve(){
         cin >> f[i];
     for (int i=0;i<n;i++)
         cin >> l[i];
-    // map<int,pair<int,int>> mp;
-    // for (int i=0;i<n;i++){
-    //     mp.insert(make_pair(f[i],make_pair(i,l[i])));
+    map<int,int> mp,jump;
+    for (int i=0;i<n;i++){
+        mp.insert(make_pair(f[i],i));
+        jump.insert(make_pair(f[i],l[i]));
+    }
+    ll count = 0;
+    // for (auto i : mp){
+    //     cout << i.first << " : " << i.second << endl;
     // }
-    // for (auto pair : mp){
-    //     cout << pair.first << " : <" << pair.second.first <<","<<pair.second.second << ">" << endl;
+    // for (auto i : jump){
+    //     cout << i.first << " : " << i.second << endl;
     // }
+    auto i = next(mp.begin(),1);
+    for (auto j=mp.begin();i!=mp.end();i++,j++){
+        // int currElem = i->first;
     
+        // int prevElem = j->first;
+        
+        if (j->second >= i->second){
+            int diff = j->second - i->second;
+            int jmp = jump.at(i->first);
+            int change = (int)(diff/jmp) + 1;
+            int incr = change * jmp;
+            i->second += incr;
+            count += change;
+        }
+
+    }
+    cout << count << endl;
 }
 
 int main(){
