@@ -16,6 +16,14 @@ using namespace std;
 #define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 typedef long long int ll;
 
+// 3
+// 2
+// suf mas
+// 3
+// good game guys
+// 4
+// hell bell best test
+
 void solve(){
     int n;
     cin >> n;
@@ -23,25 +31,38 @@ void solve(){
     for (int i=0;i<n;i++){
         cin >> names[i];
     }
-   
-    int count=0;
-    for (int i=0;i<n-1;i++){
-        for (int j=i+1;j<n;j++){
-            if (names[i][0] != names[j][0]){
-                string s1 = names[j][0] + names[i].substr(1);
-                string s2 = names[i][0] + names[j].substr(1);
-                bool flag = true;
-                for (int k=0;k<n;k++){
-                    if (s1 == names[k] || s2 == names[k]){
-                        flag = false;
-                        break;
-                    }
-                }
-                if (flag) count += 2;
-            }
-        }
+    map<string,vector<char>> mp;
+    for (int i=0;i<n;i++){
+        vector<char> s = {};
+        mp[names[i].substr(1)].push_back(names[i][0]);
     }
-    cout << count << endl;
+    for (auto i=mp.begin();i!=mp.end();i++){
+        cout << i->first << " : " << "{";
+        for (auto j : i->second)
+            cout << j << ",";
+        cout << "}" << endl;
+    }
+    
+
+
+    // int count=0; 
+    // for (int i=0;i<n-1;i++){
+    //     for (int j=i+1;j<n;j++){
+    //         if (names[i][0] != names[j][0]){
+    //             string s1 = names[j][0] + names[i].substr(1);
+    //             string s2 = names[i][0] + names[j].substr(1);
+    //             bool flag = true;
+    //             for (int k=0;k<n;k++){
+    //                 if (s1 == names[k] || s2 == names[k]){
+    //                     flag = false;
+    //                     break;
+    //                 }
+    //             }
+    //             if (flag) count += 2;
+    //         }
+    //     }
+    // }
+    // cout << count << endl;
 }
 
 int main(){

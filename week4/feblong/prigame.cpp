@@ -2,8 +2,9 @@
 #include<vector>
 #include<stack>
 #include<queue>
+#include<cstring>
+#include<set>
 #include<algorithm>
-#include <cstring>
 using namespace std; 
 
 #define mod 1000000007
@@ -13,14 +14,13 @@ using namespace std;
 #define endl "\n"
 #define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 typedef long long int ll;
+
 #define n 1000000
+bool prime[n+1];
 
-
-vector<int> sieve()
+void sieve()
 {
-    bool prime[n + 1];
     memset(prime, true, sizeof(prime));
- 
     for (int p = 2; p * p <= n; p++)
     {
         if (prime[p] == true) 
@@ -29,17 +29,26 @@ vector<int> sieve()
                 prime[i] = false;
         }
     }
-    vector<int> primes;
-    // Print all prime numbers
-    for (int p = 2; p <= n; p++)
-        if (prime[p])
-            primes.push_back(p);
-    return primes;
+}
+
+void solve(){
+    int x,y,i=0;
+    cin >> x >> y;
+    int ct = 0;
+    for (int i=2;i<=x;i++){
+        if (prime[i]){
+            ct++;
+        }
+    }
+    if (ct<y) cout << "Chef" << endl;
+    else cout << "Divyam" << endl;
 }
 
 int main(){
-    vector<int> primes = sieve();
-    for (int i=0;i<10;i++)
-        cout << primes[i] << endl;
-    
-}
+    sieve();
+    int t; cin >> t;
+    while(t>0){
+        solve();
+        t--;
+    } 
+} 
