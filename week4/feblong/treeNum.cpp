@@ -42,6 +42,7 @@ class Graph{
             s.pop();
             visited[node.first] = true;
             vector<int> children = graph[node.first];
+        
             int childs = chile[node.first];
             if (node.second%childs!=0){
                 undone += node.second;
