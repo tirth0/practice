@@ -1,6 +1,6 @@
 #include<iostream>
 #include<vector>
-#include<stack>
+#include<set>
 #include<queue>
 #include<algorithm>
 #include<string> 
@@ -24,8 +24,17 @@ typedef long long int ll;
 // 4
 // hell bell best test
 
+ll similar(vector<char> u, vector<char> v){
+    set<char> a(u.begin(),u.end());
+    ll temp=0;
+    for (auto i : v){
+        if (a.find(i)!=a.end()) temp++;
+    }
+    return temp;
+}
+
 void solve(){
-    int n;
+    int n;ll ans=0;
     cin >> n;
     vector<string> names(n);
     for (int i=0;i<n;i++){
@@ -36,33 +45,13 @@ void solve(){
         vector<char> s = {};
         mp[names[i].substr(1)].push_back(names[i][0]);
     }
-    for (auto i=mp.begin();i!=mp.end();i++){
-        cout << i->first << " : " << "{";
-        for (auto j : i->second)
-            cout << j << ",";
-        cout << "}" << endl;
+    for (auto i : mp){
+        for (auto j: mp){
+            ll temp = similar(i.second,j.second);
+            ans += (i.second.size()-temp)*(j.second.size()-temp);
+        }
     }
-    
-
-
-    // int count=0; 
-    // for (int i=0;i<n-1;i++){
-    //     for (int j=i+1;j<n;j++){
-    //         if (names[i][0] != names[j][0]){
-    //             string s1 = names[j][0] + names[i].substr(1);
-    //             string s2 = names[i][0] + names[j].substr(1);
-    //             bool flag = true;
-    //             for (int k=0;k<n;k++){
-    //                 if (s1 == names[k] || s2 == names[k]){
-    //                     flag = false;
-    //                     break;
-    //                 }
-    //             }
-    //             if (flag) count += 2;
-    //         }
-    //     }
-    // }
-    // cout << count << endl;
+    cout << ans << endl;
 }
 
 int main(){
