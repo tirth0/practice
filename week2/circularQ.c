@@ -14,12 +14,10 @@ int cqEmpty(int count){
 }
 
 void insert_rear(int item, int cq[],int * r,int *f, int * count){
-
     if (cqOverflow(*count)){
         printf("Queue OVerflow\n");
         return;
     }
-    
     *r = (*r+1)%SIZE;
     cq[*r] = item;
     *count+=1;
@@ -30,10 +28,10 @@ void delete_front(int cq[],int *f,int *count){
         printf("Circular Queue Underflow\n");
         return;
     }
-    
+    printf("The deleted element is %d\n",cq[*f]);
     
     *f = (*f+1)%SIZE;
-    printf("The deleted element is %d\n",cq[*f]);
+    
     *count-=1;
 }
 

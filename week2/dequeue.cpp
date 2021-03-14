@@ -4,8 +4,6 @@
 #define SIZE 10
 using namespace std;
 
-
-
 struct Dequeue{
     int front;
     int rear;

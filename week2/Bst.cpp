@@ -91,8 +91,7 @@ int main(){
     int arr[] = {1,2,3,4,5,6,7};
     root = arrayToBST(arr,0,6);
     preOrder(root);
-    root = deleteNode(root,5);
+    root = deleteNode(root,4);
     cout << "\n";
-    inOrder(root);
-    
+    preOrder(root);
 }

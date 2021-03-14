@@ -1,7 +1,7 @@
 # practice
 Competitive coding 
 
-## week 1:
+## module 1:
 1. Quick Sort,Merge Sort.  
 2. Order Statistics(Kth smallest/Largest).  
 3. Kadane.  
@@ -10,7 +10,7 @@ Competitive coding
 7. Modulo Arithmetic.  
 8. Matrix Problems.
 
-## week1 offshoot:  
+## module offshoot:  
 for order statistics,  
 1. Segment Trees
 2. Merge Sort Trees
@@ -18,20 +18,21 @@ for order statistics,
 4. Min Heap Max Heap techniques 
 5. Hashing
 
-## week2 :
+## module 2 :
 1. Binary Search and Applications.
 2. Queues & stacks Algorithms and application problems.
 3. Linked Lists algorithms and applications(Searching and Sorting incl merge sort,quick sort etc.)
 4. Binary Trees and related problems. !!
 6. Bit Manipulation. !!
 
-## week3 : 
+## module 3 : 
 1. BackTracking - N Queen's Problem.
 2. BackTracking - Knight's Tour
 3. BackTracking - Rat in a Maze
 4. Graph - DFS using adjacency matrix
 5. Graph - DFS using adjacency List
 6. Graph - BFS using adjacency List
+7. Topological Sort
 
-## week4 :
+## module 4 :
 1. Greedy Algorithm - Fractional Knapsack

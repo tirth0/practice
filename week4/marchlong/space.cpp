@@ -35,7 +35,6 @@ void solve(){
     }
     if (s%2 == 0) cout << "Second";
     else cout << "First";
-        
     cout << endl;
 }
 

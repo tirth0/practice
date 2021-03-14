@@ -35,6 +35,19 @@ Node * pop(){
     return st->eTree[st->top--];
 }
 
+int calculate(Node * top){
+    char d = top->data;
+    if (!isOperator(d))
+        return d-48;
+    else{
+        if (d=='+') return calculate(top->left)+calculate(top->right);
+        if (d=='-') return calculate(top->left)-calculate(top->right);
+        if (d=='/') return calculate(top->left)/calculate(top->right);
+        if (d=='*') return calculate(top->left)*calculate(top->right);
+    }
+}
+
+
 void constructTree(char* suffix){
     char s;
     s = suffix[0];
