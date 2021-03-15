@@ -36,103 +36,133 @@ cake : 1 egg 1 chocolate
 
 
 
+// void solve(){
+//     ll n,e,h,a,b,c;
+//     cin >> n >> e >> h >> a >> b >> c;
+//     multimap<ll,ll> mp;
+//     mp.insert({a,1});
+//     mp.insert({b,2});
+//     mp.insert({c,3});
+//     ll total=0;
+//     // for (auto i : mp){
+//     //     cout << i.first << " : " << i.second << endl;
+//     // }
+//     ll op=0,cp=0,kp=0;
+//     if (e/2>=n){
+//         op = a * n;
+//     }
+    
+//     if (h/3>=n){
+//         cp = b * n;
+//     }
+
+//     if (h>=n && e >=n){
+//         kp = n * c;
+//     }
+    
+//     for (auto it:mp){
+//         ll item = it.second;
+//         ll price = it.first;
+//         // cout << "ITEM " << item << endl;
+//         if (item == 1){
+//             //omlette
+//             if (e/2 >= n){
+//                 total += n * price;
+//                 n=0;
+//                 // cout << "yay" << endl;
+//                 break;
+//             }
+//             else{
+//                 if (e>=2){
+//                     total += e/2 * price;
+//                     n = n - (e/2);
+//                     e = e%2;
+                    
+//                     // cout << "\nN at omlette : " << n << "\nE at omlette : " << e << "\nH at omlette : " << h << endl;
+//                 }
+//             }
+//         }
+//         else if(item == 2){
+//             //milkshake
+//             if (h/3 >= n){
+//                 total+= n * price;
+//                 n = 0;
+//                 // cout << "yay" << endl;
+//                 break;
+//             }
+//             else{
+//                 if (h>=3){ 
+//                     total+=h/3*price;
+//                     n = n-(h/3);
+//                     h = h%3;
+                    
+//                     // cout << "\nN at Milk : " << n << "\nE at milk : " << e << "\nH at milk : " << h << endl;
+//                 }
+//             }
+//         }
+//         else if(item == 3){
+//             //cake
+//             if (e>=n && h>=n){
+//                 total+= price * n;
+//                 n = 0;
+//                 // cout << "yay" << endl;
+//                 break;
+//             }
+//             else{
+//                 ll x = e<h?e:h;
+//                 if (x>0){
+//                     total += x*price;
+//                     e = e-x;
+//                     h = h-x;
+//                     n = n-x;
+//                     // cout << "\nN at Cake : " << n << "\nE at Cake : " << e << "\nH at Cake : " << h << endl;
+//                 }
+//             }
+//         }
+//     }
+//     if (op!=0){
+//         total = min(op,total);
+//     }
+//     if (cp!=0){
+//         total = min(cp,total);
+//     }
+//     if (kp!=0){
+//         total = min(kp,total);
+//     }
+    
+//     if (n!=0) cout << -1;
+//     else cout << total;
+//     cout << endl;
+// }
+
 void solve(){
     ll n,e,h,a,b,c;
     cin >> n >> e >> h >> a >> b >> c;
-    multimap<ll,ll> mp;
-    mp.insert({a,1});
-    mp.insert({b,2});
-    mp.insert({c,3});
-    ll total=0;
-    // for (auto i : mp){
-    //     cout << i.first << " : " << i.second << endl;
-    // }
-    ll op=0,cp=0,kp=0;
-    if (e/2>=n){
-        op = a * n;
-    }
-    
-    if (h/3>=n){
-        cp = b * n;
+
+    ll price = 1e18;
+
+    for (int i=0;i<=n;i++){
+        if (e<i || h<i) break;
+
+        ll maxO = (e - i)/2;
+        ll maxM = (h - i)/3;
+        ll o=0,m=0;
+        if (i + maxO + maxM < n) continue;
+        if (a<b){
+            o = min(n-i,maxO);
+            m = n-i-o;
+        }
+        else{
+            m = min(n-i,maxM);
+            o = n-i-m;
+        }
+        ll cost = a*o + b*m + c*i;
+        price = min(price,cost);
+
     }
 
-    if (h>=n && e >=n){
-        kp = n * c;
-    }
-    
-    for (auto it:mp){
-        ll item = it.second;
-        ll price = it.first;
-        // cout << "ITEM " << item << endl;
-        if (item == 1){
-            //omlette
-            if (e/2 >= n){
-                total += n * price;
-                n=0;
-                // cout << "yay" << endl;
-                break;
-            }
-            else{
-                if (e>=2){
-                    total += e/2 * price;
-                    n = n - (e/2);
-                    e = e%2;
-                    
-                    // cout << "\nN at omlette : " << n << "\nE at omlette : " << e << "\nH at omlette : " << h << endl;
-                }
-            }
-        }
-        else if(item == 2){
-            //milkshake
-            if (h/3 >= n){
-                total+= n * price;
-                n = 0;
-                // cout << "yay" << endl;
-                break;
-            }
-            else{
-                if (h>=3){ 
-                    total+=h/3*price;
-                    n = n-(h/3);
-                    h = h%3;
-                    
-                    // cout << "\nN at Milk : " << n << "\nE at milk : " << e << "\nH at milk : " << h << endl;
-                }
-            }
-        }
-        else if(item == 3){
-            //cake
-            if (e>=n && h>=n){
-                total+= price * n;
-                n = 0;
-                // cout << "yay" << endl;
-                break;
-            }
-            else{
-                ll x = e<h?e:h;
-                if (x>0){
-                    total += x*price;
-                    e = e-x;
-                    h = h-x;
-                    n = n-x;
-                    // cout << "\nN at Cake : " << n << "\nE at Cake : " << e << "\nH at Cake : " << h << endl;
-                }
-            }
-        }
-    }
-    if (op!=0){
-        total = min(op,total);
-    }
-    if (cp!=0){
-        total = min(cp,total);
-    }
-    if (kp!=0){
-        total = min(kp,total);
-    }
-    
-    if (n!=0) cout << -1;
-    else cout << total;
-    cout << endl;
+    if (price == 1e18) cout << -1 << endl;
+    else cout << price << endl;
 }
 
 int main(){
