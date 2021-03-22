@@ -18,38 +18,43 @@ using namespace std;
 typedef long long int ll;
 
 
-void solve(){
-    int k,n;
-    cin >> n >> k;
-    vector<int> v(n);
-    multimap<int,pair<int,int>> mp;
-    int sum = 0;
-    for (int i=0,j=0;j<n;j++){
-        cin >> v[j];
-        sum+=v[j];
-        if (j-i==k-1){
-            mp.insert(make_pair(sum,make_pair(i,j)));
-            sum -=v[i];
-            i++;
-        }
-    }
-    ll cost =0;
-    for (auto k:mp){
-        int i = k.second.first;
-        int j = k.second.second;
-        int ct=0;
-        while (i<=j){
+// void solve(){
+//     int k,n;
+//     cin >> n >> k;
+//     vector<int> v(n);
+//     multimap<int,pair<int,int>> mp;
+//     int sum = 0;
+//     for (int i=0,j=0;j<n;j++){
+//         cin >> v[j];
+//         sum+=v[j];
+//         if (j-i==k-1){
+//             mp.insert(make_pair(sum,make_pair(i,j)));
+//             sum -=v[i];
+//             i++;
+//         }
+//     }
+//     ll cost =0;
+//     for (auto k:mp){
+//         int i = k.second.first;
+//         int j = k.second.second;
+//         int ct=0;
+//         while (i<=j){
             
-            if (v[i]==1){
-                ct++;
-                v[i]=0;
-            }
-            i++; 
-        }
-        cost += (int) ct * (ct+1) / 2;
-    }
+//             if (v[i]==1){
+//                 ct++;
+//                 v[i]=0;
+//             }
+//             i++; 
+//         }
+//         cost += (int) ct * (ct+1) / 2;
+//     }
 
-    cout << cost << endl;
+//     cout << cost << endl;
+// }
+
+void solve(){
+    int n,k;
+    
 }
 
 int main(){

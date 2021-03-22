@@ -39,4 +39,5 @@ for order statistics,
 
 ## module 4 :
 1. Greedy Algorithm - Fractional Knapsack
-2. Convex Hull - Jarvis March
+2. Job Sequencing with Deadlines
+3. Convex Hull - Jarvis March
