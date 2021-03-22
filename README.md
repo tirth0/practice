@@ -17,6 +17,9 @@ for order statistics,
 3. Binary Search on Segment Trees/Merge Sort Trees
 4. Min Heap Max Heap techniques 
 5. Hashing
+6. Binary Exponentiation
+7. Cross Product Problems
+8. Binary Search to find square root
 
 ## module 2 :
 1. Binary Search and Applications.
@@ -36,3 +39,4 @@ for order statistics,
 
 ## module 4 :
 1. Greedy Algorithm - Fractional Knapsack
+2. Convex Hull - Jarvis March
