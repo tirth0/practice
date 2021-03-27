@@ -18,10 +18,27 @@ using namespace std;
 #define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 typedef long long int ll;
 
+void solve(){
+    ll n,m,x;
+    cin >> n >> m >> x;
+    ll i=-1,j=-1;
+    bool flag=false;
+    for (j=0;j<m;j++){
+        i = x-1-n*j;
+        if (i<n && i>=0){
+            break;
+        }
+    }
+    ll num = m*i+j+1;
+    cout << num << endl;
+}
+
 int main(){
-    int n,a,b;
-    cin >> n >> a >> b;
-    int res = (a+b)%n==0?n:(a+b)%n;
-    res = res<0?res+n:res;
-    cout << res;
+    ll t;
+    cin >> t;
+    while(t>0){
+        t--;
+        solve();
+    }
+    return 0;
 }
