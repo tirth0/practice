@@ -11,7 +11,7 @@ Competitive coding
 8. Matrix Problems.
 
 ## module offshoot:  
-for order statistics,  
+  
 1. Segment Trees
 2. Merge Sort Trees
 3. Binary Search on Segment Trees/Merge Sort Trees
@@ -20,6 +20,9 @@ for order statistics,
 6. Binary Exponentiation
 7. Cross Product Problems
 8. Binary Search to find square root
+9. High Level Decomposition
+10. Square Root Decomposition
+11. Euler Tour of Tree
 
 ## module 2 :
 1. Binary Search and Applications.
