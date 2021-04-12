@@ -45,3 +45,4 @@ Competitive coding
 2. Job Sequencing with Deadlines
 3. Prims Algorithm for MCST
 4. Convex Hull - Jarvis March
+5. Segment Tree with Point Update
