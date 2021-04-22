@@ -19,28 +19,35 @@ using namespace std;
 #define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 typedef long long int ll;
 
-//Fit Squares
-
-int squares(int b){
-    if (b<4) return 0;
-    if (b==4) return 1;
-    int max = b/4;
-    int space_left = b/2 - (b/4) * 2;
-    return max*max + 2 * squares(b/2+space_left);
+bool sgn(ll n){
+    return n>0;  
 }
 
 void solve(){
-    int b;
-    cin >> b;
-    int res = squares(b);
-    cout << "Result is : " << res << endl;
+    int n;
+    cin >> n;
+    vector<ll> v(n);
+    for (int i=0;i<n;i++){
+        cin >> v[i];
+    }
+    ll sum = 0;
+    for (int i=0;i<n;i++){
+        int j=i;ll mx = v[i];
+        while(j<n && (sgn(v[i])==sgn(v[j]))){
+            mx = max(mx,v[j]);
+            j++;
+        }
+        sum+=mx;
+        i=j-1;
+    }
+    cout << sum << endl;
 }
 
 int main(){
     int t;
     cin >> t;
-    while (t-->0){
+    while(t>0){
+        t--;
         solve();
     }
-    return 0;
 }
