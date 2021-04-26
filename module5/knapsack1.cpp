@@ -17,7 +17,7 @@ int main(){
     int *wt = new int[n];
     int *price = new int[n];
     int w;
-    cin >> w;
+    cin >> w; 
     cout << knapsack(wt,price,w,n);
     return 0;
 }
