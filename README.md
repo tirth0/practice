@@ -49,3 +49,4 @@ Competitive coding
 
 ## module 5 :
 1. Dynamic Programming : Coin Change 2 Leetcode(All possible combinations)
+2. 0-1 Knapsack recursion
