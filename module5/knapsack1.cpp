@@ -16,6 +16,7 @@ int main(){
     cin >> n;
     int *wt = new int[n];
     int *price = new int[n];
+    //take inputs
     int w;
     cin >> w; 
     cout << knapsack(wt,price,w,n);
