@@ -43,9 +43,10 @@ Competitive coding
 ## module 4 :
 1. Greedy Algorithm - Fractional Knapsack
 2. Job Sequencing with Deadlines
-3. Prims Algorithm for MCST !
+3. Prim's Minimum Spanning Tree using Adj Matrix(N2 solution)
 4. Convex Hull - Jarvis March
 5. Segment Tree with Point Update
+6. Binary Heap 
 
 ## module 5 :
 1. Dynamic Programming : Coin Change 2 Leetcode(All possible combinations)
