@@ -22,7 +22,7 @@ int partition(int arr[],int low,int high){
     int i = high+1;
     for (int j=high;j>low;j--)
         if (arr[j]>pivot){
-            i--;;
+            i--;
             swap(&arr[j],&arr[i]);
         }
     swap(&arr[--i],&arr[low]);
