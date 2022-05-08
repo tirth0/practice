@@ -1,6 +1,6 @@
 class Solution {
 public:
-    vector<int> postorder(Node* root) {
+    vector<int> preorder(Node* root) {
         stack <Node*> stk;
         vector<int> visited;
         vector<int> res;
@@ -11,11 +11,12 @@ public:
             if (node == nullptr || node->val == -1) continue;
             res.push_back(node -> val);
             node-> val = -1;
-            for (Node * child: node->children){
+            auto v = node->children;
+            reverse(v.begin(), v.end());
+            for (Node * child: v){
                     stk.push(child);
             }
         }
-        reverse(res.begin(), res.end());
         return res;
     }
 };
